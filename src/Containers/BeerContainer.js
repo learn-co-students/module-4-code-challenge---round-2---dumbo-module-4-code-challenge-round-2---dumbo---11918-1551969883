@@ -32,10 +32,10 @@ clickHandler = (val) => {
 
 handleChange =  (e) => {
   console.log(e.target.value)
-  let cars = [...this.state.beers].filter(beer => beer.name.toLowerCase().includes(e.target.value.toLowerCase()))
+  let beers = [...this.state.beers].filter(beer => beer.name.toLowerCase().includes(e.target.value.toLowerCase()))
   this.setState({
     searchTerm: e.target.value,
-    filteredBeers: cars
+    filteredBeers: beers
   })
     // let cars = this.state.beers.filter(beer => beer.name.toLowerCase().includes(this.state.searchTerm))
 }
