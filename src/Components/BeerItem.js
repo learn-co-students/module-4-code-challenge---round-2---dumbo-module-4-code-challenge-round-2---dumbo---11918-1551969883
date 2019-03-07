@@ -1,11 +1,15 @@
-import React from "react";
+import React from "react"
 
-const BeerItem = () => {
+const BeerItem = props => {
+  let clickHandle = () => {
+    props.beerSelect(props.beer)
+  }
+
   return (
-    <li className="beer-item" onClick={""}>
-      {/* beer name goes here */}
+    <li className="beer-item" onClick={clickHandle}>
+      {props.beer.name}
     </li>
-  );
-};
+  )
+}
 
-export default BeerItem;
+export default BeerItem
