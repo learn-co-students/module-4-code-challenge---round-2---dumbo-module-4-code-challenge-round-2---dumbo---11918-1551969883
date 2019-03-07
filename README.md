@@ -8,7 +8,7 @@
 
 ### Step 2
 
--- As a user, when I click a beer name, the application should reveal more information about that particular beer.
+<!-- -- As a user, when I click a beer name, the application should reveal more information about that particular beer. -->
 
 ### Step 3
 
