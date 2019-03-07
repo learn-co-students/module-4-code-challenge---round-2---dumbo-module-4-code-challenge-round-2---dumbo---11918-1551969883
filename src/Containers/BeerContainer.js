@@ -9,7 +9,7 @@ class BeerContainer extends Component {
 state ={
   beers: [],
   filteredBeers: [],
-  favoriteBeers:[],
+  favoriteBeers:{},
   searchTerm: ""
 }
 
@@ -47,11 +47,11 @@ removeBeerHandler = beerObj =>{
 }
 
 addBeerHandler = (beerObj) =>{
-  console.log("bookies",beerObj);
-  let filtered =  [...this.state.favoriteBeers,beerObj]
+  // console.log("bookies",beerObj);
+  // let filtered =  [...this.state.favoriteBeers,beerObj]
     // if(this.state.favoriteBeers)
     this.setState({
-      favoriteBeers: filtered
+      favoriteBeers: beerObj
     })
 
 }
@@ -62,14 +62,13 @@ addBeerHandler = (beerObj) =>{
 
 
   render() {
-    let beerList = this.state.beers.map(beers => <BeerItem key={beers.id} beers={beers}/>)
+    let beerList = this.state.beers.map(beers => <BeerItem key={beers.id} beers={beers}  clickHandler ={this.addBeerHandler} />)
 console.log(this.state.beers);
     return (
       <div>
         <Search value ={this.state.searchTerm} changeHandler = {this.changeHandler}/>
         <br />
         <ul className="container">{beerList}</ul>
-        <BeerItem  clickHandler ={this.addBeerHandler} beers={this.state.beers} favoriteBeers={this.state.filteredBeers} />
         <BeerDetail   clickHandler ={this.removeBeerHandler} beers={this.state.beers} favoriteBeers={this.state.filteredBeers} />
       </div>
     );
