@@ -1,9 +1,11 @@
 import React from "react";
 
-const BeerItem = () => {
+const BeerItem = (props) => {
+  let { beer, clickHandler } = props;
+
   return (
-    <li className="beer-item" onClick={""}>
-      {/* beer name goes here */}
+    <li className="beer-item" onClick={()=>clickHandler(beer)}>
+      {beer.name}
     </li>
   );
 };
