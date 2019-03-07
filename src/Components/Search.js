@@ -1,11 +1,11 @@
 import React from "react";
 
 const Search = props => {
-  let {value,changeHandler} = props
+  let {value,onChange} = props
   return (
 <div>
     <form className="search">
-<input  placeholder ="Search" onChange ={changeHandler}/>
+<input  placeholder ="Search"onChange ={onChange}/>
 
 
 
