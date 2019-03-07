@@ -4,7 +4,7 @@
 
 ### Step 1
 
--- As a user, when the page loads, I should see a list of beer names retrieved from an API on the right hand side of the screen.
+<!-- -- As a user, when the page loads, I should see a list of beer names retrieved from an API on the right hand side of the screen. -->
 
 ### Step 2
 

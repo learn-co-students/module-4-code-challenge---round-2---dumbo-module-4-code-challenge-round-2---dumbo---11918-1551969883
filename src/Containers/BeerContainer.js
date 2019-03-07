@@ -7,7 +7,8 @@ import BeerItem from "../Components/BeerItem"
 class BeerContainer extends Component {
 
   state ={
-    beers: []
+    beers: [],
+    clickedBeer: {}
   }
 
 
@@ -19,14 +20,19 @@ componentDidMount() {
   }))
 }
 
-clickHandler = () => {
-  console.log('in beer container click handle')
+clickHandler = (val) => {
+  console.log('clicked',val)
+  this.setState({
+    clickedBeer: val
+  })
+
+
 }
 
 
   render() {
     let beerList = this.state.beers.map((beer) => {
-      console.log({...beer})
+      // console.log({...beer})
       return <BeerItem clickHandler={this.clickHandler}key={beer.id} beer={beer}/>
     })
     return (
@@ -34,7 +40,7 @@ clickHandler = () => {
         <Search />
         <br />
         <ul className="container">{beerList}</ul>
-        <BeerDetail />
+        <BeerDetail beer={this.state.clickedBeer} />
       </div>
     );
   }
